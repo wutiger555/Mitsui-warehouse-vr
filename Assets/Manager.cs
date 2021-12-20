@@ -23,6 +23,10 @@ public class Manager : MonoBehaviour {
 	public AudioClip AudioClip;
 	public AudioSource audioSource1;
 	public AudioClip AudioClip1;
+	public GameObject level2Building;
+	public GameObject level3Building;
+	public GameObject level4Building;
+	public GameObject level5Building;
 	public void playClip()
 	{
 		audioSource.PlayOneShot(AudioClip);
@@ -70,6 +74,7 @@ public class Manager : MonoBehaviour {
 			if (story2Bool == false)
             {
 				story2.SetActive(true);
+				level2Building.SetActive(true);
 				playClip();
 				playClip1();
 			}
@@ -84,6 +89,8 @@ public class Manager : MonoBehaviour {
 			if (story3Bool == false)
             {
 				story3.SetActive(true);
+				level2Building.SetActive(false);
+				level3Building.SetActive(true);
 				playClip();
 				playClip1();
 			}
@@ -97,6 +104,8 @@ public class Manager : MonoBehaviour {
 			if (story4Bool == false)
             {
 				story4.SetActive(true);
+				level3Building.SetActive(false);
+				level4Building.SetActive(true);
 				playClip();
 				playClip1();
 			}
@@ -110,6 +119,7 @@ public class Manager : MonoBehaviour {
 			if (story5Bool == false)
             {
 				story5.SetActive(true);
+				level5Building.SetActive(true);
 				playClip();
 				playClip1();
 			}
