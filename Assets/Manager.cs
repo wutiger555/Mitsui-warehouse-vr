@@ -9,6 +9,7 @@ public class Manager : MonoBehaviour {
 	public GameObject b0F;
 	public GameObject b1F;
 	public GameObject b2F;
+	public GameObject b3F;
 	public GameObject story1;
 	public GameObject story2;
 	public GameObject story3;
@@ -26,7 +27,14 @@ public class Manager : MonoBehaviour {
 	public GameObject level2Building;
 	public GameObject level3Building;
 	public GameObject level4Building;
-	public GameObject level5Building;
+	public GameObject Floor;
+	public Material material1;
+	public Material material2;
+	public Material material3;
+	public Material material4;
+	public Material material5;
+	public GameObject tiger1;
+	public GameObject tiger2;
 	public void playClip()
 	{
 		audioSource.PlayOneShot(AudioClip);
@@ -60,8 +68,10 @@ public class Manager : MonoBehaviour {
 			if (story1Bool == false)
             {
 				story1.SetActive(true);
+				tiger1.SetActive(false);
 				playClip();
 				playClip1();
+				Floor.GetComponent<MeshRenderer>().material = material1;
 			}
 				
 			story1Bool = true;
@@ -73,10 +83,12 @@ public class Manager : MonoBehaviour {
 			b1F.SetActive(true);
 			if (story2Bool == false)
             {
+				tiger2.SetActive(false);
 				story2.SetActive(true);
 				level2Building.SetActive(true);
 				playClip();
 				playClip1();
+				Floor.GetComponent<MeshRenderer>().material = material2;
 			}
 				
 			story2Bool = true;
@@ -93,6 +105,7 @@ public class Manager : MonoBehaviour {
 				level3Building.SetActive(true);
 				playClip();
 				playClip1();
+				Floor.GetComponent<MeshRenderer>().material = material3;
 			}
 				
 			story3Bool = true;
@@ -101,6 +114,7 @@ public class Manager : MonoBehaviour {
 		}
 		else if (4 == Goals.Count)
 		{
+			b3F.SetActive(true);
 			if (story4Bool == false)
             {
 				story4.SetActive(true);
@@ -108,6 +122,7 @@ public class Manager : MonoBehaviour {
 				level4Building.SetActive(true);
 				playClip();
 				playClip1();
+				Floor.GetComponent<MeshRenderer>().material = material4;
 			}
 				
 			story4Bool = true;
@@ -119,9 +134,10 @@ public class Manager : MonoBehaviour {
 			if (story5Bool == false)
             {
 				story5.SetActive(true);
-				level5Building.SetActive(true);
+				
 				playClip();
 				playClip1();
+				Floor.GetComponent<MeshRenderer>().material = material5;
 			}
 				
 			story5Bool = true;
