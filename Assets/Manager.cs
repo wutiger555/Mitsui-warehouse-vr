@@ -97,6 +97,8 @@ public class Manager : MonoBehaviour {
 		}
 		else if (3 == Goals.Count)
 		{
+			b0F.SetActive(false);
+			b1F.SetActive(false);
 			b2F.SetActive(true);
 			if (story3Bool == false)
             {
@@ -114,6 +116,7 @@ public class Manager : MonoBehaviour {
 		}
 		else if (4 == Goals.Count)
 		{
+			b2F.SetActive(false);
 			b3F.SetActive(true);
 			if (story4Bool == false)
             {
