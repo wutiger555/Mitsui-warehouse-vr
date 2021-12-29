@@ -35,6 +35,12 @@ public class Manager : MonoBehaviour {
 	public Material material5;
 	public GameObject tiger1;
 	public GameObject tiger2;
+	public GameObject hint;
+	public GameObject level1;
+	public GameObject level2;
+	public GameObject level3;
+	public GameObject level4;
+	public GameObject level5;
 	public void playClip()
 	{
 		audioSource.PlayOneShot(AudioClip);
@@ -72,6 +78,8 @@ public class Manager : MonoBehaviour {
 				playClip();
 				playClip1();
 				Floor.GetComponent<MeshRenderer>().material = material1;
+				hint.SetActive(false);
+				level1.SetActive(true);
 			}
 				
 			story1Bool = true;
@@ -89,6 +97,8 @@ public class Manager : MonoBehaviour {
 				playClip();
 				playClip1();
 				Floor.GetComponent<MeshRenderer>().material = material2;
+				level1.SetActive(false);
+				level2.SetActive(true);
 			}
 				
 			story2Bool = true;
@@ -108,6 +118,8 @@ public class Manager : MonoBehaviour {
 				playClip();
 				playClip1();
 				Floor.GetComponent<MeshRenderer>().material = material3;
+				level2.SetActive(false);
+				level3.SetActive(true);
 			}
 				
 			story3Bool = true;
@@ -126,6 +138,8 @@ public class Manager : MonoBehaviour {
 				playClip();
 				playClip1();
 				Floor.GetComponent<MeshRenderer>().material = material4;
+				level3.SetActive(false);
+				level4.SetActive(true);
 			}
 				
 			story4Bool = true;
@@ -141,6 +155,7 @@ public class Manager : MonoBehaviour {
 				playClip();
 				playClip1();
 				Floor.GetComponent<MeshRenderer>().material = material5;
+
 			}
 				
 			story5Bool = true;
