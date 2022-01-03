@@ -41,6 +41,12 @@ public class Manager : MonoBehaviour {
 	public GameObject level3;
 	public GameObject level4;
 	public GameObject level5;
+	public GameObject fire1;
+	public GameObject fire2;
+	public AudioClip Audiostory1;
+	public AudioClip Audiostory2;
+	public AudioClip Audiostory3;
+	public AudioClip Audiostory4;
 	public void playClip()
 	{
 		audioSource.PlayOneShot(AudioClip);
@@ -48,6 +54,10 @@ public class Manager : MonoBehaviour {
 	public void playClip1()
 	{
 		audioSource1.PlayOneShot(AudioClip1);
+	}
+	public void playClips(AudioClip Clip)
+	{
+		audioSource.PlayOneShot(Clip);
 	}
 
 	// Use this for initialization
@@ -76,7 +86,7 @@ public class Manager : MonoBehaviour {
 				story1.SetActive(true);
 				tiger1.SetActive(false);
 				playClip();
-				playClip1();
+				playClips(Audiostory1);
 				Floor.GetComponent<MeshRenderer>().material = material1;
 				hint.SetActive(false);
 				level1.SetActive(true);
@@ -95,10 +105,11 @@ public class Manager : MonoBehaviour {
 				story2.SetActive(true);
 				level2Building.SetActive(true);
 				playClip();
-				playClip1();
+				playClips(Audiostory2);
 				Floor.GetComponent<MeshRenderer>().material = material2;
 				level1.SetActive(false);
 				level2.SetActive(true);
+				fire1.SetActive(false);
 			}
 				
 			story2Bool = true;
@@ -116,10 +127,11 @@ public class Manager : MonoBehaviour {
 				level2Building.SetActive(false);
 				level3Building.SetActive(true);
 				playClip();
-				playClip1();
+				playClips(Audiostory3);
 				Floor.GetComponent<MeshRenderer>().material = material3;
 				level2.SetActive(false);
 				level3.SetActive(true);
+				fire2.SetActive(false);
 			}
 				
 			story3Bool = true;
@@ -136,7 +148,7 @@ public class Manager : MonoBehaviour {
 				level3Building.SetActive(false);
 				level4Building.SetActive(true);
 				playClip();
-				playClip1();
+				playClips(Audiostory4);
 				Floor.GetComponent<MeshRenderer>().material = material4;
 				level3.SetActive(false);
 				level4.SetActive(true);
